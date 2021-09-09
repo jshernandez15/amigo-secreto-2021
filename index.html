@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Amigo Secreto</title>
+    
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="heroes.css" rel="stylesheet">
+
+    <script>
+      function amigo(){
+        var amigo = "";
+        const params = new URLSearchParams(window.location.search);
+        for (const param of params) {
+          if(param[0] == "persona"){
+            amigo = atob(param[1]);
+          }
+          if(param[0] == "quien"){
+            quien = atob(param[1]);
+          }
+        }
+        document.getElementById("titulo").innerHTML = quien + ", tu amigo secreto es " + amigo;
+      }
+    </script>
+  </head>
+  <body>
+    
+<main>
+
+  <div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 id="titulo" class="display-4 fw-bold">¿Quién es tu amigo secreto?</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Esta es una invitación para compartir juntos como familia el día 25 de septiembre.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" onclick="amigo()">Descubrir a mi amigo</button>
+      </div>
+    </div>
+    <div class="overflow-hidden" style="max-height: 30vh;">
+      <div class="container px-5">
+        <img src="02.jpeg" class="img-fluid border rounded-3 shadow-lg mb-6" alt="Example image" width="700" height="800" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+</main>
+
+
+    <script src="bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
